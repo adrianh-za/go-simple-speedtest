@@ -1,10 +1,9 @@
 # go-simple-speedtest
-Library written in Go to perform simple file download to determine download speed.
+Program written in Go to perform simple file download to calculate download speed.
 
-Everytime the program is executed, it appends the download data to a file (speedtest.txt) in CSV format.
+When the program is executed, it appends the download data to a file (speedtest.csv) in CSV format.
 
-The CSV colum data is
-
+The CSV column data is:
 * time of file download
 * total bytes downloaded
 * total megabytes downloaded
@@ -21,12 +20,12 @@ The CSV colum data is
 
 ## Extra ##
 
-Created the following cron job so that is runs every 4 hours.  The cron has multiple steps:
+The following cron job runs every 4 hours.  The cron job has multiple steps:
 
 * <b>0 */4 * * *</b> = Run every 4 hours.
 * <b>PATH=$PATH:/usr/local/go/bin</b> = Set the path to include GO executable location.
-* <b>cd /home/pi/Documents/speedtest</b> = Change the current directory to where the speedtest go file resides.
+* <b>cd /home/pi/Documents/speedtest</b> = Change the current directory to where the main.go file resides.
 * <b>go run main.go</b> = Run the program.
-* <b>>> cron.txt 2>&1</b> = Dump output from cron job to this file (in the directory we changed to above.) and do not try mail output.
+* <b>>> cron.txt 2>&1</b> = Dump output from cron job to this file (in the directory we changed to above) and don't mail output.
 
 ```0 */4 * * * PATH=$PATH:/usr/local/go/bin && cd /home/pi/Documents/speedtest && go run main.go >> cron.txt 2>&1```
