@@ -24,7 +24,7 @@ The following cron job runs every 4 hours.  The cron job has multiple steps:
 
 * <b>0 */4 * * *</b> = Run every 4 hours.
 * <b>PATH=$PATH:/usr/local/go/bin</b> = Set the path to include GO executable location.
-* <b>cd /home/pi/Documents/speedtest</b> = Change the current directory to where the main.go file resides.
+* <b>cd /home/pi/go/src/github.com/adrianh-za/go-simple-speedtest</b> = Change the current directory to where the main.go file resides.
 * <b>go run main.go</b> = Run the program.
 * <b>>> cron.txt 2>&1</b> = Dump output from cron job to this file (in the directory we changed to above) and don't mail output.
 
