@@ -28,4 +28,4 @@ The following cron job runs every 4 hours.  The cron job has multiple steps:
 * <b>go run main.go</b> = Run the program.
 * <b>>> cron.txt 2>&1</b> = Dump output from cron job to this file (in the directory we changed to above) and don't mail output.
 
-```0 */4 * * * PATH=$PATH:/usr/local/go/bin && cd /home/pi/Documents/speedtest && go run main.go >> cron.txt 2>&1```
+```0 */4 * * * PATH=$PATH:/usr/local/go/bin && cd /home/pi/go/src/github.com/adrianh-za/go-simple-speedtest && go run main.go >> cron.txt 2>&1```
